@@ -78,7 +78,7 @@ export function HeroSection() {
           >
             <span className="block">We build stunning</span>
             <span className="block">
-              <span className="relative inline-block text-gradient">
+              <span className="relative inline-block text-gradient cuboid-rotate">
                 <span 
                   key={wordIndex}
                   className="inline-flex"
@@ -86,7 +86,7 @@ export function HeroSection() {
                   {words[wordIndex].split("").map((char, i) => (
                     <span
                       key={`${wordIndex}-${i}`}
-                      className="inline-block animate-char-in"
+                      className="inline-block"
                       style={{
                         animationDelay: `${i * 50}ms`,
                       }}
