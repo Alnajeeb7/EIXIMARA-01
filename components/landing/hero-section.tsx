@@ -105,13 +105,19 @@ export function HeroSection() {
               </span>
             <span className="block">
               <span className="relative inline-block text-gradient">
-                <span className="cuboid-wrapper">
-                  {words.map((word, idx) => (
+                <span 
+                  key={wordIndex}
+                  className="inline-flex"
+                >
+                  {words[wordIndex].split("").map((char, i) => (
                     <span
-                      key={word}
-                      className={`cuboid-face ${idx === wordIndex ? 'cuboid-face-active' : 'cuboid-face-hidden'}`}
+                      key={`${wordIndex}-${i}`}
+                      className="inline-block animate-char-in"
+                      style={{
+                        animationDelay: `${i * 50}ms`,
+                      }}
                     >
-                      {word}
+                      {char}
                     </span>
                   ))}
                 </span>
