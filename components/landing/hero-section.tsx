@@ -7,10 +7,12 @@ import { AnimatedSphere } from "./animated-sphere";
 import Link from "next/link";
 
 const words = ["portfolios", "websites", "software", "brands"];
+const adjectives = ["stunning", "beautiful", "amazing", "powerful", "creative"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
   const [wordIndex, setWordIndex] = useState(0);
+  const [adjectiveIndex, setAdjectiveIndex] = useState(0);
 
   useEffect(() => {
     setIsVisible(true);
@@ -19,6 +21,13 @@ export function HeroSection() {
   useEffect(() => {
     const interval = setInterval(() => {
       setWordIndex((prev) => (prev + 1) % words.length);
+    }, 2500);
+    return () => clearInterval(interval);
+  }, []);
+
+  useEffect(() => {
+    const interval = setInterval(() => {
+      setAdjectiveIndex((prev) => (prev + 1) % adjectives.length);
     }, 2500);
     return () => clearInterval(interval);
   }, []);
@@ -76,7 +85,19 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
-            <span className="block">We build stunning</span>
+            <span className="block">
+                We build{" "}
+                <span className="inline-block cuboid-wrapper">
+                  {adjectives.map((adj, idx) => (
+                    <span
+                      key={adj}
+                      className={`cuboid-face ${idx === adjectiveIndex ? 'cuboid-face-active' : 'cuboid-face-hidden'}`}
+                    >
+                      {adj}
+                    </span>
+                  ))}
+                </span>
+              </span>
             <span className="block">
               <span className="relative inline-block text-gradient">
                 <span className="cuboid-wrapper">
