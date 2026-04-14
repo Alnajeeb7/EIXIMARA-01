@@ -85,24 +85,24 @@ export function HeroSection() {
               isVisible ? "opacity-100 translate-y-0" : "opacity-0 translate-y-8"
             }`}
           >
+            <span className="block">We build</span>
             <span className="block">
-                We build{" "}
-                <span className="cuboid-container">
-                  <span 
-                    className="cuboid-rotator"
-                    style={{ transform: `rotateX(${adjectiveIndex * -90}deg)` }}
-                  >
-                    {adjectives.map((adj, idx) => (
-                      <span
-                        key={adj}
-                        className={`cuboid-side cuboid-side-${idx}`}
-                      >
-                        {adj}
-                      </span>
-                    ))}
-                  </span>
+              <span className="cuboid-container">
+                <span 
+                  className="cuboid-rotator"
+                  style={{ transform: `rotateX(${adjectiveIndex * -90}deg)` }}
+                >
+                  {adjectives.map((adj, idx) => (
+                    <span
+                      key={adj}
+                      className={`cuboid-side cuboid-side-${idx}`}
+                    >
+                      {adj}
+                    </span>
+                  ))}
                 </span>
               </span>
+            </span>
             <span className="block">
               <span className="relative inline-block text-gradient">
                 <span 
