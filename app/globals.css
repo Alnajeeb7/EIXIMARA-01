@@ -200,52 +200,41 @@
   }
 
   .cuboid-container {
-    display: inline-block;
+    display: inline-flex;
     perspective: 500px;
     perspective-origin: center center;
-    vertical-align: baseline;
-    height: 1.2em;
-    position: relative;
-    min-width: 4.5em;
-    overflow: visible;
+    vertical-align: bottom;
+    height: 1em;
+    line-height: 1;
   }
 
   .cuboid-rotator {
     display: inline-block;
-    position: relative;
     transform-style: preserve-3d;
     transition: transform 0.8s cubic-bezier(0.68, -0.55, 0.265, 1.55);
-    height: 1.2em;
-    width: 100%;
   }
 
   .cuboid-side {
-    display: flex;
-    align-items: center;
-    justify-content: flex-start;
     position: absolute;
-    left: 0;
-    top: 0;
-    height: 1.2em;
     backface-visibility: hidden;
     white-space: nowrap;
-    width: max-content;
   }
 
   .cuboid-side-0 {
-    transform: rotateX(0deg) translateZ(0.6em);
+    position: relative;
+    transform: rotateX(0deg) translateZ(0.5em);
   }
 
   .cuboid-side-1 {
-    transform: rotateX(90deg) translateZ(0.6em);
+    transform: rotateX(90deg) translateZ(0.5em);
   }
 
   .cuboid-side-2 {
-    transform: rotateX(180deg) translateZ(0.6em);
+    transform: rotateX(180deg) translateZ(0.5em);
   }
 
   .cuboid-side-3 {
-    transform: rotateX(270deg) translateZ(0.6em);
+    transform: rotateX(270deg) translateZ(0.5em);
   }
 
   .noise-overlay {
