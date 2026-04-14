@@ -7,7 +7,7 @@ import { AnimatedSphere } from "./animated-sphere";
 import Link from "next/link";
 
 const words = ["portfolios", "websites", "software", "brands"];
-const adjectives = ["stunning", "beautiful", "amazing", "powerful", "creative"];
+const adjectives = ["stunning", "beautiful", "amazing", "powerful"];
 
 export function HeroSection() {
   const [isVisible, setIsVisible] = useState(false);
@@ -87,15 +87,20 @@ export function HeroSection() {
           >
             <span className="block">
                 We build{" "}
-                <span className="inline-block cuboid-wrapper">
-                  {adjectives.map((adj, idx) => (
-                    <span
-                      key={adj}
-                      className={`cuboid-face ${idx === adjectiveIndex ? 'cuboid-face-active' : 'cuboid-face-hidden'}`}
-                    >
-                      {adj}
-                    </span>
-                  ))}
+                <span className="cuboid-container">
+                  <span 
+                    className="cuboid-rotator"
+                    style={{ transform: `rotateX(${adjectiveIndex * -90}deg)` }}
+                  >
+                    {adjectives.map((adj, idx) => (
+                      <span
+                        key={adj}
+                        className={`cuboid-side cuboid-side-${idx}`}
+                      >
+                        {adj}
+                      </span>
+                    ))}
+                  </span>
                 </span>
               </span>
             <span className="block">
