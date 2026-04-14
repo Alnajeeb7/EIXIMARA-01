@@ -121,7 +121,6 @@ export function HeroSection() {
                     </span>
                   ))}
                 </span>
-                <span className="absolute -bottom-2 left-0 right-0 h-3 bg-primary/20 rounded-full" />
               </span>
             </span>
           </h1>
